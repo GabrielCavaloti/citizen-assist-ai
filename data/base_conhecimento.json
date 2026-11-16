@@ -1,0 +1,265 @@
+[
+  {
+    "id": "cns-01",
+    "categoria": "Cartão SUS e cadastro",
+    "titulo": "Primeiro Cartão SUS (CNS)",
+    "palavras_chave": [
+      "primeiro cartão",
+      "primeira via",
+      "fazer cartão",
+      "fazer o cartão",
+      "tirar cartão",
+      "novo cartão",
+      "emitir cns",
+      "fazer cns"
+    ],
+    "resposta": "Procure um estabelecimento de saúde para solicitar o cadastro e o cartão. Antes de ir, confirme com a unidade quais documentos levar.",
+    "documentos": [
+      "Confirme a lista com a unidade. O atendimento oficial orienta levar documentos pessoais e comprovante de endereço."
+    ],
+    "onde": "Estabelecimento de saúde no município onde você mora.",
+    "fonte": "https://webatendimento.saude.gov.br/faq/cadsus",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "cns-02",
+    "categoria": "Cartão SUS e cadastro",
+    "titulo": "Consultar o número do Cartão SUS",
+    "palavras_chave": [
+      "número do cartão",
+      "número do cns",
+      "consultar cns",
+      "cns digital",
+      "ver meu cartão",
+      "cartão digital",
+      "consultar cartão sus"
+    ],
+    "resposta": "Entre no Meu SUS Digital com sua conta Gov.br. Abra Perfil, toque no ícone do cartão e vire o cartão na tela para ver o número do CNS.",
+    "documentos": [
+      "Conta Gov.br para acessar o Meu SUS Digital."
+    ],
+    "onde": "Aplicativo ou site Meu SUS Digital.",
+    "fonte": "https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "cns-03",
+    "categoria": "Cartão SUS e cadastro",
+    "titulo": "Segunda via do Cartão SUS",
+    "palavras_chave": [
+      "segunda via do cartão sus",
+      "segunda via cartão sus",
+      "2ª via",
+      "imprimir cartão",
+      "cartão sus impresso",
+      "perdi meu cartão sus",
+      "perdi o cartão do sus"
+    ],
+    "resposta": "Use o cartão digital no Meu SUS Digital. Se quiser uma cópia em papel, solicite a impressão em um estabelecimento de saúde.",
+    "documentos": [
+      "Conta Gov.br para ver a versão digital.",
+      "Para a versão impressa, confirme com a unidade o que levar."
+    ],
+    "onde": "Meu SUS Digital ou estabelecimento de saúde.",
+    "fonte": "https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "cns-04",
+    "categoria": "Cartão SUS e cadastro",
+    "titulo": "Atualizar os dados do cadastro do SUS",
+    "palavras_chave": [
+      "atualizar cadastro",
+      "corrigir cadastro",
+      "corrigir dados",
+      "dados incorretos",
+      "comprovante de residência",
+      "cadastro desatualizado",
+      "mudei de endereço"
+    ],
+    "resposta": "Se os dados do seu cadastro no SUS estiverem errados, procure um estabelecimento de saúde e diga quais informações precisam ser corrigidas.",
+    "documentos": [
+      "Documento de identificação com foto.",
+      "Comprovante de residência.",
+      "Número do Cartão Nacional de Saúde."
+    ],
+    "onde": "Estabelecimento de saúde.",
+    "fonte": "https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "vac-01",
+    "categoria": "Vacinação",
+    "titulo": "Vacinação na UBS e segunda via da caderneta",
+    "palavras_chave": [
+      "onde vacinar",
+      "tomar vacina",
+      "sala de vacinação",
+      "vacina grátis",
+      "perdi a caderneta",
+      "sem cartão de vacina",
+      "segunda via da caderneta",
+      "perdi o cartão de vacina",
+      "perdi minha carteira de vacinação"
+    ],
+    "resposta": "As vacinas de rotina do SUS são gratuitas. Procure a sala de vacinação de uma UBS. Se perdeu a caderneta, peça a segunda via na unidade em que se vacinou. Você pode se vacinar mesmo sem o cartão de vacinas.",
+    "documentos": [
+      "Leve o cartão de vacinas ou a caderneta, se tiver."
+    ],
+    "onde": "Sala de vacinação da Unidade Básica de Saúde (UBS).",
+    "fonte": "https://www.gov.br/saude/pt-br/vacinacao",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "vac-02",
+    "categoria": "Vacinação",
+    "titulo": "Consultar a carteira digital de vacinação",
+    "palavras_chave": [
+      "carteira digital",
+      "histórico de vacinas",
+      "comprovante de vacinação",
+      "vacinas no aplicativo",
+      "consultar vacinas",
+      "carteira de vacinação digital",
+      "ver minhas vacinas"
+    ],
+    "resposta": "No Meu SUS Digital, abra Minha Saúde e depois Vacinas para ver as doses registradas. Na aba Documentos, consulte a carteira digital e os comprovantes disponíveis.",
+    "documentos": [
+      "Conta Gov.br para acessar o Meu SUS Digital."
+    ],
+    "onde": "Aplicativo ou site Meu SUS Digital.",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/noticias/2026/outubro/quer-consultar-suas-vacinas-saiba-como-acessar-a-carteira-de-vacinacao-pelo-meu-sus-digital",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "vac-03",
+    "categoria": "Vacinação",
+    "titulo": "Vacina ausente ou incorreta no aplicativo",
+    "palavras_chave": [
+      "vacina não aparece",
+      "dose não aparece",
+      "dose sumiu",
+      "registro errado",
+      "corrigir vacina",
+      "vacina não consta",
+      "dose faltando",
+      "vacina não está aparecendo"
+    ],
+    "resposta": "Se uma dose não aparece ou está errada, fale com a unidade onde você se vacinou para conferir o registro. A Secretaria Municipal de Saúde também pode orientar.",
+    "documentos": [
+      "Confirme com a unidade o que apresentar para localizar o registro."
+    ],
+    "onde": "Unidade que aplicou a vacina ou Secretaria Municipal de Saúde.",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/noticias/2026/outubro/quer-consultar-suas-vacinas-saiba-como-acessar-a-carteira-de-vacinacao-pelo-meu-sus-digital",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "vac-04",
+    "categoria": "Vacinação",
+    "titulo": "Calendário de vacinação por idade",
+    "palavras_chave": [
+      "calendário de vacinação",
+      "calendário vacinal",
+      "vacinas por idade",
+      "vacina atrasada",
+      "vacinas da criança",
+      "vacinas do adulto",
+      "carteira atrasada",
+      "quais vacinas"
+    ],
+    "resposta": "Consulte o calendário do Ministério da Saúde para ver as vacinas indicadas para cada fase da vida. Se houver uma dose em atraso, a equipe da sala de vacinação pode conferir a caderneta e orientar como atualizá-la.",
+    "documentos": [
+      "Cartão de vacinas ou caderneta, se tiver, para a equipe conferir as doses."
+    ],
+    "onde": "Página do Calendário de Vacinação ou sala de vacinação da UBS.",
+    "fonte": "https://www.gov.br/saude/pt-br/vacinacao/calendario",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "ubs-01",
+    "categoria": "Atendimento na UBS",
+    "titulo": "Encontrar uma UBS perto de você",
+    "palavras_chave": [
+      "ubs perto",
+      "ubs próxima",
+      "localizar ubs",
+      "endereço da ubs",
+      "posto de saúde mais próximo",
+      "encontrar ubs",
+      "ubs do meu bairro",
+      "onde fica a ubs"
+    ],
+    "resposta": "Use o Meu SUS Digital para procurar unidades de saúde pela sua localização e consultar rotas até elas.",
+    "documentos": [
+      "Conta Gov.br para acessar o Meu SUS Digital."
+    ],
+    "onde": "Aplicativo Meu SUS Digital.",
+    "fonte": "https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "ubs-02",
+    "categoria": "Atendimento na UBS",
+    "titulo": "Serviços disponíveis na UBS",
+    "palavras_chave": [
+      "atendimento na ubs",
+      "o que a ubs faz",
+      "serviços da ubs",
+      "consulta de rotina",
+      "pré-natal",
+      "dentista na ubs",
+      "primeiro atendimento"
+    ],
+    "resposta": "A UBS oferece cuidados de rotina, como consultas, acompanhamento, pré-natal e vacinação. Pergunte à equipe da unidade quais serviços ela oferece e como ter acesso a eles.",
+    "documentos": [
+      "Confirme com a UBS quais documentos apresentar para o serviço desejado."
+    ],
+    "onde": "Unidade Básica de Saúde (UBS).",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/noticias/2025/outubro/ubs-ou-upa-saiba-quando-procurar-a-unidade-mais-proxima-de-voce",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "ubs-03",
+    "categoria": "Atendimento na UBS",
+    "titulo": "Marcar consulta na UBS",
+    "palavras_chave": [
+      "marcar consulta",
+      "agendar consulta",
+      "agendamento na ubs",
+      "consulta pelo aplicativo",
+      "agendar atendimento",
+      "marcação de consulta"
+    ],
+    "resposta": "Veja se a opção de agendamento aparece no Meu SUS Digital. A disponibilidade depende do município. Se a opção não aparecer, pergunte à UBS como marcar.",
+    "documentos": [
+      "Conta Gov.br para acessar o aplicativo.",
+      "Para atendimento presencial, confirme com a UBS o que levar."
+    ],
+    "onde": "Meu SUS Digital, quando disponível, ou sua Unidade Básica de Saúde (UBS).",
+    "fonte": "https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao",
+    "verificado_em": "2026-11-16"
+  },
+  {
+    "id": "ubs-04",
+    "categoria": "Atendimento na UBS",
+    "titulo": "Atendimento sem Cartão SUS ou documentação civil",
+    "palavras_chave": [
+      "sem cartão sus",
+      "sem o cartão sus",
+      "sem cartão do sus",
+      "sem cns",
+      "sem cpf",
+      "sem documento",
+      "sem documentação",
+      "sem endereço fixo",
+      "não tenho cartão sus"
+    ],
+    "resposta": "Procure a unidade de saúde e explique sua situação. A falta de documentação civil ou de moradia permanente não impede o acesso ao SUS. Se você tiver outro documento válido, leve para facilitar a identificação. A equipe pode orientar sobre identificação provisória.",
+    "documentos": [
+      "Outro documento válido, se tiver."
+    ],
+    "onde": "Recepção da unidade de saúde.",
+    "fonte": "https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt12263_05_10_2026.html",
+    "verificado_em": "2026-11-16"
+  }
+]
