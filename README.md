@@ -1,6 +1,15 @@
 # Citizen Assist AI
 
-Projeto da FIAP GS2026.2 para a disciplina Pensamento Computacional e Automação com Python. Esta primeira versão orienta pessoas que usam o SUS pela primeira vez sobre Cartão SUS e cadastro, vacinação e atendimento na UBS.
+Projeto da FIAP GS2026.2 para a disciplina Pensamento Computacional e Automação com Python.
+
+**Integrantes:** Enrico Marinho de Aquino e Gabriel Castilla Cavaloti. Os RMs constam no arquivo de entrega da FIAP.
+
+## Público e problema
+
+Quem usa o SUS pela primeira vez precisa saber onde buscar atendimento, quais documentos levar e onde conferir a informação. O assistente reúne orientações administrativas sobre Cartão SUS e cadastro, vacinação e atendimento na UBS e mostra a fonte de cada resposta.
+
+- **ODS 3 — Saúde e Bem-Estar.** As orientações sobre o primeiro acesso ao SUS se relacionam com a meta 3.8, que trata do acesso a serviços essenciais de saúde. [Nações Unidas](https://brasil.un.org/pt-br/sdgs/03)
+- **ODS 10 — Redução das Desigualdades.** A linguagem simples ajuda a reduzir a barreira de informação para quem ainda precisa entender como usar o serviço, em linha com a meta 10.2 sobre inclusão. [Nações Unidas](https://brasil.un.org/pt-br/sdgs/10)
 
 ## Executar no Windows
 
@@ -10,18 +19,17 @@ Abra o PowerShell na pasta do repositório. Com Python 3.10 ou superior disponí
 python main.py
 ```
 
-Nesta máquina, o atalho `python` do Windows não iniciou. O Python 3.12 do Codex funcionou com o seguinte comando:
+O programa usa a biblioteca padrão, funciona localmente e usa regras de busca em Python. A aplicação é independente de APIs e de projetos de outras disciplinas.
 
-```powershell
-& 'C:/Program Files/WindowsApps/OpenAI.CodexPrimaryRuntime.v26-1112-737-0_26.1112.737.0_x64__3k8sg7r9htsxt/dependencies/python/python.exe' -X utf8 main.py
-```
+## Como a busca funciona
 
-O programa usa apenas a biblioteca padrão e funciona localmente. As fontes oficiais são exibidas como links para consulta. O sistema usa palavras-chave e títulos para encontrar orientações e funciona como guia acadêmico para procedimentos administrativos.
+O menu inicia um `Assistente` que usa uma `BaseConhecimento` composta por objetos `Orientacao`. A busca compara a pergunta, as palavras-chave e o título em minúsculas, sem acentos ou pontuação. Cada palavra-chave ou expressão completa encontrada soma 3 pontos. Cada palavra distinta da pergunta com quatro letras ou mais que aparece no título soma 1 ponto. A busca devolve as tuplas `(pontos, orientação)` da maior para a menor pontuação.
+
+A melhor pontuação determina a confiança. De 3 a 5 é média e a partir de 6 é alta. Abaixo de 3, o programa indica reformular ou navegar por categorias. A tela oferece até duas alternativas com pontuação de pelo menos 3.
 
 ## Uso e dados
 
 - Faça uma pergunta sem dados pessoais ou navegue pelas categorias. Perguntas com `@` ou oito ou mais dígitos são recusadas antes da busca e do registro.
-- A confiança indica o resultado da busca por termos. O sistema considera alta a partir de 6 pontos, média de 3 a 5 e propõe reformulação ou navegação abaixo de 3. Termos repetidos contam uma vez.
 - Edite `data/base_conhecimento.json` para atualizar respostas e palavras-chave. Ao atualizar uma orientação, confira a fonte oficial e atualize `verificado_em`.
 - O histórico guarda localmente a última pergunta válida de cada atendimento, a orientação exibida e o feedback. A navegação direta grava a pergunta em branco. Cada busca válida conta uma tentativa. Se uma busca sem resultado for resolvida pelas categorias, a escolha soma uma tentativa no mesmo atendimento.
 - O tempo mede da abertura da busca ou da navegação até a exibição da orientação avaliada. Em atendimentos sem orientação, mede até o retorno ao menu. O tempo de feedback fica fora da medição.
@@ -29,10 +37,50 @@ O programa usa apenas a biblioteca padrão e funciona localmente. As fontes ofic
 - `data/historico.json` persiste atendimentos e notas de facilidade por sessão. Se estiver corrompido, o programa preserva o arquivo e registra em memória durante a sessão. O programa foi projetado para uma sessão por vez.
 - A opção de exportação gera `data/atendimentos.csv` com as linhas dos atendimentos. Use dados fictícios nos testes técnicos e evite compartilhar o histórico de uso por conter texto livre.
 
-## Testes
+## Fontes do SUS
+
+As fontes abaixo foram conferidas em 16/11/2026. Cada registro da base aponta para a página que sustenta a orientação.
+
+- [Ministério da Saúde · Perguntas frequentes do Meu SUS Digital](https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao)
+- [Ministério da Saúde · Atendimento CadSUS](https://webatendimento.saude.gov.br/faq/cadsus)
+- [Ministério da Saúde · Vacinação](https://www.gov.br/saude/pt-br/vacinacao)
+- [Ministério da Saúde · Carteira de vacinação digital e correção de registros](https://www.gov.br/saude/pt-br/assuntos/noticias/2026/outubro/quer-consultar-suas-vacinas-saiba-como-acessar-a-carteira-de-vacinacao-pelo-meu-sus-digital)
+- [Ministério da Saúde · Calendário Nacional de Vacinação](https://www.gov.br/saude/pt-br/vacinacao/calendario)
+- [Ministério da Saúde · Serviços na UBS](https://www.gov.br/saude/pt-br/assuntos/noticias/2025/outubro/ubs-ou-upa-saiba-quando-procurar-a-unidade-mais-proxima-de-voce)
+- [Ministério da Saúde · Portaria GM/MS nº 12.263 sobre o CadSUS](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt12263_05_10_2026.html)
+
+## Testes técnicos
 
 ```powershell
 python -m unittest discover -s tests -v
+python tests/simular_atendimentos.py evidencias/simulacao
 ```
 
-Se estiver usando o Python do Codex, substitua `python` pelo caminho completo indicado acima, seguido de `-X utf8` e dos argumentos do teste. Os testes usam diretórios temporários. A etapa acadêmica de avaliação com usuários prevê três pessoas reais de fora da dupla e dez atendimentos no total.
+Em 18/11/2026, os 12 testes automatizados passaram. A simulação executou 10 atendimentos no terminal em três sessões roteirizadas com 4, 3 e 3 atendimentos.
+
+| Indicador exibido | Resultado da simulação |
+| --- | --- |
+| Respostas encontradas | 90% (9 de 10) |
+| Respostas que ajudaram | 100% (9 de 9 avaliações programadas) |
+| Tempo médio para encontrar | 0,0 s na precisão de uma casa decimal, com entradas enviadas por script |
+| Tentativas por atendimento | 1,1 |
+| Facilidade média | 4,3/5, a partir das entradas programadas 4, 5 e 4 |
+| Dúvidas sem solução | 1. Transferência de título de eleitor, assunto fora da base SUS |
+
+Na verificação técnica inicial, “Como faço o cartão do SUS?” ficava abaixo da pontuação mínima. Acrescentamos a expressão na orientação sobre o primeiro cartão. A pergunta passou a obter 4 pontos e a apresentar a orientação correta. O caso faz parte dos testes automatizados.
+
+Evidências da simulação. [Histórico JSON](evidencias/simulacao/historico.json) · [CSV exportado](evidencias/simulacao/atendimentos.csv)
+
+## Teste com usuários
+
+Pendente. A avaliação solicitada pela disciplina prevê pelo menos três pessoas de fora da dupla, dez atendimentos no total e uma melhoria baseada nos resultados. Os indicadores da simulação descrevem a execução técnica do roteiro.
+
+## Limitações
+
+- A cobertura se limita aos temas incluídos no JSON. Expressões fora do vocabulário podem exigir reformulação ou navegação.
+- A orientação indica canais e procedimentos administrativos. Agenda, horários e disponibilidade de serviços precisam ser conferidos na unidade ou no canal oficial.
+- A regra de bloqueio identifica padrões de e-mail e números longos. Evite inserir qualquer dado pessoal em texto livre.
+
+## Vídeo técnico
+
+Link pendente.

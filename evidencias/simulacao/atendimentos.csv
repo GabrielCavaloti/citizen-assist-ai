@@ -1,0 +1,11 @@
+﻿data,origem,pergunta,orientacao_id,encontrou,ajudou,tentativas,tempo_segundos
+2026-11-18T11:00:34-03:00,pergunta,Como faço o cartão do SUS?,cns-01,True,True,1,0.0
+2026-11-18T11:00:34-03:00,pergunta,Onde vejo o número do CNS?,cns-02,True,True,1,0.0
+2026-11-18T11:00:34-03:00,pergunta,Mudei de endereço,cns-04,True,True,2,0.0
+2026-11-18T11:00:34-03:00,categoria,,vac-01,True,True,1,0.0
+2026-11-18T11:00:34-03:00,pergunta,Minha vacina não aparece no aplicativo,vac-03,True,True,1,0.0
+2026-11-18T11:00:34-03:00,pergunta,Onde tem o calendário de vacinação?,vac-04,True,True,1,0.0
+2026-11-18T11:00:34-03:00,pergunta,Como localizar UBS perto de casa?,ubs-01,True,True,1,0.0
+2026-11-18T11:00:34-03:00,pergunta,Tem como agendar consulta?,ubs-03,True,True,1,0.0
+2026-11-18T11:00:34-03:00,categoria,,ubs-04,True,True,1,0.0
+2026-11-18T11:00:34-03:00,pergunta,Como transferir meu título de eleitor?,,False,,1,0.0

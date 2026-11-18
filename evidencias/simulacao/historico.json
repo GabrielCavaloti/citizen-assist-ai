@@ -1,0 +1,109 @@
+{
+  "atendimentos": [
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Como faço o cartão do SUS?",
+      "orientacao_id": "cns-01",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Onde vejo o número do CNS?",
+      "orientacao_id": "cns-02",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Mudei de endereço",
+      "orientacao_id": "cns-04",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 2,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "categoria",
+      "pergunta": "",
+      "orientacao_id": "vac-01",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Minha vacina não aparece no aplicativo",
+      "orientacao_id": "vac-03",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Onde tem o calendário de vacinação?",
+      "orientacao_id": "vac-04",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Como localizar UBS perto de casa?",
+      "orientacao_id": "ubs-01",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Tem como agendar consulta?",
+      "orientacao_id": "ubs-03",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "categoria",
+      "pergunta": "",
+      "orientacao_id": "ubs-04",
+      "encontrou": true,
+      "ajudou": true,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    },
+    {
+      "data": "2026-11-18T11:00:34-03:00",
+      "origem": "pergunta",
+      "pergunta": "Como transferir meu título de eleitor?",
+      "orientacao_id": null,
+      "encontrou": false,
+      "ajudou": null,
+      "tentativas": 1,
+      "tempo_segundos": 0.0
+    }
+  ],
+  "notas_facilidade": [
+    4,
+    5,
+    4
+  ]
+}

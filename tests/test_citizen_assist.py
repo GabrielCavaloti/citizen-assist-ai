@@ -40,6 +40,7 @@ class TestCitizenAssist(unittest.TestCase):
         self.assertGreaterEqual(len(self.base.orientacoes), 10)
         exemplos = {
             "Como fazer o primeiro Cartão SUS?": "cns-01",
+            "Como faço o cartão do SUS?": "cns-01",
             "Onde vejo o número do CNS?": "cns-02",
             "Como tirar a segunda via do cartão SUS?": "cns-03",
             "Como atualizar cadastro?": "cns-04",
