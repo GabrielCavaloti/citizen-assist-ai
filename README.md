@@ -32,7 +32,7 @@ Abra o PowerShell na pasta do repositório. Com Python 3.10 ou superior disponí
 python main.py
 ```
 
-O programa usa a biblioteca padrão, funciona localmente e usa regras de busca em Python. A aplicação é independente de APIs e de projetos de outras disciplinas.
+O programa usa a biblioteca padrão, funciona localmente e usa regras de busca em Python. O módulo de energia descrito acima integra a contribuição de Soluções em Energias Renováveis e Sustentáveis.
 
 ## Como a busca funciona
 
@@ -69,7 +69,7 @@ python -m unittest discover -s tests -v
 python tests/simular_atendimentos.py evidencias/simulacao
 ```
 
-Em 18/11/2026, os 12 testes automatizados passaram. A simulação executou 10 atendimentos no terminal em três sessões roteirizadas com 4, 3 e 3 atendimentos.
+Em 18/11/2026, os 18 testes automatizados passaram, sendo 12 do assistente SUS e 6 do módulo de energia. A simulação executou 10 atendimentos no terminal em três sessões roteirizadas com 4, 3 e 3 atendimentos.
 
 | Indicador exibido | Resultado da simulação |
 | --- | --- |

@@ -49,11 +49,12 @@ SESSOES = (
 def simular(destino):
     with tempfile.TemporaryDirectory() as pasta_temporaria:
         pasta = Path(pasta_temporaria)
-        for nome in ("main.py", "assistente.py", "base_conhecimento.py", "orientacao.py"):
+        for nome in ("main.py", "assistente.py", "base_conhecimento.py", "orientacao.py", "energia.py"):
             shutil.copyfile(PROJETO / nome, pasta / nome)
         dados = pasta / "data"
         dados.mkdir()
         shutil.copyfile(PROJETO / "data" / "base_conhecimento.json", dados / "base_conhecimento.json")
+        shutil.copyfile(PROJETO / "data" / "energia.json", dados / "energia.json")
 
         ids_previstos = []
         notas_previstas = []
