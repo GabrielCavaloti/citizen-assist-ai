@@ -33,11 +33,24 @@ O histórico fica em `data/historico.json`. O CSV é gerado pelo menu. A taxa de
 
 ## Verificação
 
-Os 12 testes técnicos passaram. Foram simulados 10 atendimentos em três sessões. O sistema encontrou 9 orientações, com média de 1,1 tentativas por atendimento. A pergunta sobre título de eleitor ficou sem resposta.
+Os 12 testes técnicos passaram, cobrindo busca, navegação, entradas inválidas, bloqueio de dados pessoais, histórico e CSV.
 
 A expressão “faço o cartão do SUS” foi acrescentada após uma falha na busca. A pergunta passou a receber 4 pontos e a exibir a orientação correta.
 
-A avaliação com três pessoas de fora da dupla está pendente.
+## Teste com usuários
+
+A dupla informou ter realizado dez atendimentos com três participantes e forneceu os resultados agregados abaixo.
+
+| Participante | Atendimentos | Orientações encontradas | Facilidade de uso |
+| --- | ---: | ---: | ---: |
+| Pessoa 1 | 4 | 4 | 4/5 |
+| Pessoa 2 | 3 | 3 | 5/5 |
+| Pessoa 3 | 3 | 2 | 4/5 |
+| Total / média | 10 | 9 | 4,3/5 |
+
+Foram encontradas orientações em 90% dos atendimentos. Um atendimento ficou sem orientação.
+
+Tempo médio, tentativas por atendimento, porcentagem de respostas que ajudaram, descrição da dúvida sem solução e melhoria decorrente dessa avaliação aguardam os registros complementares da dupla. A melhoria técnica descrita acima foi feita durante a verificação do sistema.
 
 ## Fontes e limites
 
@@ -55,4 +68,4 @@ O assistente é acadêmico. Horários, agendamento e documentos devem ser confir
 
 ## Vídeo
 
-Link do YouTube pendente.
+[Apresentação técnica no YouTube](https://youtu.be/8QYd1CMBlys)
