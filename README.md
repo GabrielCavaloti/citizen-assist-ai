@@ -48,9 +48,18 @@ A dupla informou ter realizado dez atendimentos com três participantes e fornec
 | Pessoa 3 | 3 | 2 | 4/5 |
 | Total / média | 10 | 9 | 4,3/5 |
 
-Foram encontradas orientações em 90% dos atendimentos. Um atendimento ficou sem orientação.
+| Indicador | Resultado informado |
+| --- | --- |
+| Orientações encontradas | 90% (9 de 10) |
+| Orientação considerada útil | 100% |
+| Tempo médio por atendimento | Aproximadamente 4 minutos e 30 segundos |
+| Tentativas por atendimento | Aproximadamente 1,2 |
+| Facilidade média | 4,3/5 |
+| Dúvidas sem solução | 1 atendimento (10%) |
 
-Tempo médio, tentativas por atendimento, porcentagem de respostas que ajudaram, descrição da dúvida sem solução e melhoria decorrente dessa avaliação aguardam os registros complementares da dupla. A melhoria técnica descrita acima foi feita durante a verificação do sistema.
+Os valores de utilidade, tempo e tentativas foram informados pela dupla de forma agregada. O tempo corresponde à duração média do atendimento.
+
+A descrição da dúvida sem solução e uma melhoria decorrente dessa avaliação ainda precisam ser informadas. A melhoria técnica descrita acima foi feita durante a verificação do sistema.
 
 ## Fontes e limites
 
