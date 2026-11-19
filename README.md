@@ -1,6 +1,6 @@
 # Citizen Assist AI
 
-Projeto da FIAP GS2026.2 para a disciplina Pensamento Computacional e Automação com Python.
+Projeto da FIAP GS2026.2 com as contribuições de Pensamento Computacional e Automação com Python e de Soluções em Energias Renováveis e Sustentáveis.
 
 **Integrantes**
 
@@ -13,6 +13,16 @@ Quem usa o SUS pela primeira vez precisa saber onde buscar atendimento, quais do
 
 - **ODS 3 — Saúde e Bem-Estar.** As orientações sobre o primeiro acesso ao SUS se relacionam com a meta 3.8, que trata do acesso a serviços essenciais de saúde. [Nações Unidas](https://brasil.un.org/pt-br/sdgs/03)
 - **ODS 10 — Redução das Desigualdades.** A linguagem simples ajuda a reduzir a barreira de informação para quem ainda precisa entender como usar o serviço, em linha com a meta 10.2 sobre inclusão. [Nações Unidas](https://brasil.un.org/pt-br/sdgs/10)
+
+## Soluções em Energias Renováveis e Sustentáveis
+
+O módulo atende famílias que já usam o assistente e querem reduzir o gasto com iluminação. Compara uma referência com incandescentes existentes a LED na rede e a LED com um sistema solar dedicado e bateria. O simulador aceita quantidade de lâmpadas, horas de uso, preço variável do kWh e cenário de sol. As orientações usam os dados preenchidos.
+
+- **Terminal:** execute `python main.py` e escolha **5. Energia e sustentabilidade**.
+- **Navegador:** execute `python energia_web.py` e abra `http://127.0.0.1:8765`. Pode usar o cenário inicial ou simular pouco sol e perguntar sobre a bateria.
+- [Dados, cálculos, comparação e referências](docs/energia.md)
+- [Dados do cenário](data/energia.json) e [série climatológica da NASA POWER](data/nasa-power-sao-paulo.json)
+- [Testes técnicos e protocolo de validação com usuários](docs/testes-energia.md)
 
 ## Executar no Windows
 
