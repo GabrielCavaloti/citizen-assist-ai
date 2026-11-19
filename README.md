@@ -1,6 +1,6 @@
 # Citizen Assist AI
 
-Projeto da FIAP GS2026.2 com as contribuições de Pensamento Computacional e Automação com Python e de Soluções em Energias Renováveis e Sustentáveis.
+Projeto da FIAP GS2026.2. O Citizen Assist AI orienta o primeiro acesso ao SUS e inclui um módulo para comparar o consumo e o custo da iluminação residencial. As contribuições de Pensamento Computacional e Automação com Python e de Soluções em Energias Renováveis e Sustentáveis estão reunidas neste repositório.
 
 **Integrantes**
 
@@ -16,13 +16,23 @@ Quem usa o SUS pela primeira vez precisa saber onde buscar atendimento, quais do
 
 ## Soluções em Energias Renováveis e Sustentáveis
 
-O módulo atende famílias que já usam o assistente e querem reduzir o gasto com iluminação. Compara uma referência com incandescentes existentes a LED na rede e a LED com um sistema solar dedicado e bateria. O simulador aceita quantidade de lâmpadas, horas de uso, preço variável do kWh e cenário de sol. As orientações usam os dados preenchidos.
+O módulo ajuda famílias a entender quanto gastam com iluminação e o que muda ao trocar as lâmpadas. O exemplo usa seis incandescentes de 60 W, acesas por cinco horas diárias. Comparamos esse uso com duas alternativas de brilho semelhante, LED ligado à rede e LED alimentado por painel solar e bateria.
 
-- **Terminal:** execute `python main.py` e escolha **5. Energia e sustentabilidade**.
-- **Navegador:** execute `python energia_web.py` e abra `http://127.0.0.1:8765`. Pode usar o cenário inicial ou simular pouco sol e perguntar sobre a bateria.
-- [Dados, cálculos, comparação e referências](docs/energia.md)
-- [Dados do cenário](data/energia.json) e [série climatológica da NASA POWER](data/nasa-power-sao-paulo.json)
-- [Testes técnicos e protocolo de validação com usuários](docs/testes-energia.md)
+No simulador, é possível alterar a quantidade de lâmpadas, as horas de uso, o preço do kWh e o cenário de sol. As respostas sobre economia, consumo, bateria e impacto ambiental acompanham essas alterações. O mesmo cálculo atende o menu do terminal e a interface no navegador.
+
+| Opção para 30 dias | Energia da rede | Despesa variável com iluminação | Investimento estimado |
+| --- | ---: | ---: | ---: |
+| Incandescentes existentes | 54,00 kWh | R$ 54,00 | R$ 0 |
+| LED + rede | 8,10 kWh | R$ 8,10 | R$ 72 |
+| LED + solar com bateria, junho médio em São Paulo | 0 kWh | R$ 0,00 | R$ 2.072 |
+
+Os valores usam R$ 1,00/kWh e preços ilustrativos de equipamentos. A conta da residência também inclui outros consumos e cobranças. Com pouco sol, o modelo prevê complemento da rede para manter a iluminação. Os dados, as perdas consideradas e os limites estão no estudo abaixo.
+
+Para usar pelo terminal, execute `python main.py` e escolha **5. Energia e sustentabilidade**. Para abrir o simulador, execute `python energia_web.py` e acesse `http://127.0.0.1:8765` no navegador. É necessário ter Python 3.10 ou superior. O programa usa a biblioteca padrão e os dados já incluídos na pasta.
+
+- O [estudo de energia](docs/energia.md) reúne as contas, a comparação, as recomendações e as referências.
+- Os [dados do cenário](data/energia.json) guardam as premissas usadas no código. A [resposta original da NASA POWER](data/nasa-power-sao-paulo.json) contém a irradiação consultada para São Paulo.
+- Os [registros de verificação](docs/testes-energia.md) apresentam os testes técnicos, as evidências e o roteiro para avaliação com usuários.
 
 ## Executar no Windows
 
@@ -34,13 +44,13 @@ python main.py
 
 O programa usa a biblioteca padrão, funciona localmente e usa regras de busca em Python. O módulo de energia descrito acima integra a contribuição de Soluções em Energias Renováveis e Sustentáveis.
 
-## Como a busca funciona
+## Busca das orientações sobre o SUS
 
 O menu inicia um `Assistente` que usa uma `BaseConhecimento` composta por objetos `Orientacao`. A busca compara a pergunta, as palavras-chave e o título em minúsculas, sem acentos ou pontuação. Cada palavra-chave ou expressão completa encontrada soma 3 pontos. Cada palavra distinta da pergunta com quatro letras ou mais que aparece no título soma 1 ponto. A busca devolve as tuplas `(pontos, orientação)` da maior para a menor pontuação.
 
 A melhor pontuação determina a confiança. De 3 a 5 é média e a partir de 6 é alta. Abaixo de 3, o programa indica reformular ou navegar por categorias. A tela oferece até duas alternativas com pontuação de pelo menos 3.
 
-## Uso e dados
+## Histórico dos atendimentos sobre o SUS
 
 - Faça uma pergunta sem dados pessoais ou navegue pelas categorias. Perguntas com `@` ou oito ou mais dígitos são recusadas antes da busca e do registro.
 - Edite `data/base_conhecimento.json` para atualizar respostas e palavras-chave. Ao atualizar uma orientação, confira a fonte oficial e atualize `verificado_em`.
@@ -84,9 +94,11 @@ Na verificação técnica inicial, “Como faço o cartão do SUS?” ficava aba
 
 Evidências da simulação. [Histórico JSON](evidencias/simulacao/historico.json) · [CSV exportado](evidencias/simulacao/atendimentos.csv)
 
-## Teste com usuários
+## Teste com usuários do módulo SUS
 
-Pendente. A avaliação solicitada pela disciplina prevê pelo menos três pessoas de fora da dupla, dez atendimentos no total e uma melhoria baseada nos resultados. Os indicadores da simulação descrevem a execução técnica do roteiro.
+A coleta com usuários ainda está pendente. Para a contribuição de Pensamento Computacional e Automação com Python, a avaliação prevê pelo menos três pessoas de fora da dupla, dez atendimentos no total e uma melhoria baseada nos resultados. Os indicadores da tabela acima vêm da simulação técnica.
+
+A verificação da compreensão das orientações de energia também está pendente. As tarefas e os campos para registrar comentários e ajustes estão em [testes de energia](docs/testes-energia.md).
 
 ## Limitações
 
@@ -94,6 +106,6 @@ Pendente. A avaliação solicitada pela disciplina prevê pelo menos três pesso
 - A orientação indica canais e procedimentos administrativos. Agenda, horários e disponibilidade de serviços precisam ser conferidos na unidade ou no canal oficial.
 - A regra de bloqueio identifica padrões de e-mail e números longos. Evite inserir qualquer dado pessoal em texto livre.
 
-## Vídeo técnico
+## Vídeo da contribuição de energia
 
-Link pendente.
+A apresentação tem 1 min 52 s e mostra o cenário, a comparação das alternativas, as consultas ao assistente e o teste com pouco sol. A publicação como Não listado no YouTube está pendente.

@@ -21,7 +21,17 @@ Para repetir a suíte com Python 3.10 ou superior:
 python -m unittest discover -s tests -v
 ```
 
-Para reproduzir as verificações da interface, execute `python energia_web.py` e abra `http://127.0.0.1:8765`. Faça as ações descritas na tabela usando o cenário inicial, exceto quando a linha pedir uma alteração. Os testes do navegador foram feitos no Microsoft Edge com automação, sem participação de usuários.
+Para conferir a interface, execute `python energia_web.py` e abra `http://127.0.0.1:8765`. Comece com os valores iniciais e siga as situações da tabela. As verificações do navegador foram automatizadas no Microsoft Edge. A avaliação com pessoas ainda precisa ser feita.
+
+As evidências técnicas estão na pasta `evidencias/energia`.
+
+- O [registro da suíte](../evidencias/energia/testes-automatizados.txt) mostra os 18 testes executados.
+- O [registro do navegador](../evidencias/energia/verificacao-navegador.txt) confirma a verificação das interações no simulador e da apresentação em tela estreita.
+- A [comparação inicial](../evidencias/energia/comparacao-inicial.png) apresenta o consumo e o investimento de cada opção.
+- O [cenário de pouco sol](../evidencias/energia/pouco-sol.png) mostra a cobertura solar de 71,7% e o complemento da rede.
+- A [resposta sobre energia solar](../evidencias/energia/resposta-solar.png) acompanha os dados desse cenário.
+- A [consulta sobre impacto](../evidencias/energia/impacto-e-fontes.png) apresenta os valores de CO₂, as referências e os limites do cálculo.
+- Os [resultados dos cenários](../evidencias/energia/cenarios.json) guardam a saída do cálculo em formato numérico.
 
 ### Mudanças feitas durante a verificação técnica
 
@@ -30,13 +40,13 @@ Para reproduzir as verificações da interface, execute `python energia_web.py` 
 
 ## Teste com usuários
 
-A coleta com pessoas do público-alvo está pendente. Este protocolo é para verificar compreensão e utilidade, com registro anônimo e sem coletar faturas, endereços, documentos ou nomes dos participantes.
+A avaliação com pessoas do público-alvo ainda está pendente. As tarefas abaixo verificam se a pessoa entende a economia, percebe os limites do solar e consegue usar a orientação para decidir o que conferir em casa. O registro usa um código para cada participante.
 
 1. Abra o cenário inicial. Peça à pessoa que descubra quanto economizaria trocando as seis lâmpadas e explique se a estimativa vale para toda a conta.
 2. Peça para mudar o cenário para **Pouco sol (hipotético)** e perguntar sobre a bateria. A pessoa deve conseguir explicar o que significam a cobertura e a parcela de rede.
-3. Peça para indicar o primeiro passo que faria em casa e explicar se a orientação ajuda a decidir. Registre a dificuldade e uma sugestão de melhoria com palavras da própria pessoa, sem dados pessoais.
+3. Peça para indicar o primeiro passo que faria em casa e explicar se a orientação ajuda a decidir. Anote a dificuldade e uma sugestão nas palavras da pessoa.
 4. Ajuste a interface ou o texto a partir de uma dificuldade observada. Repita a tarefa afetada e registre o resultado obtido.
 
-| Código | Tarefa | Conseguiu explicar? | Comentário recebido | Ajuste aplicado e resultado do reteste |
+| Código e data | Tarefa | Explicação dada pela pessoa | Comentário recebido | Ajuste aplicado e resultado do reteste |
 | --- | --- | --- | --- | --- |
 | — | — | — | Coleta pendente | — |
