@@ -1,111 +1,80 @@
 # Citizen Assist AI
 
-Projeto da FIAP GS2026.2. O Citizen Assist AI orienta o primeiro acesso ao SUS e inclui um módulo para comparar o consumo e o custo da iluminação residencial. As contribuições de Pensamento Computacional e Automação com Python e de Soluções em Energias Renováveis e Sustentáveis estão reunidas neste repositório.
-
-**Integrantes**
+FIAP GS2026.2 — Pensamento Computacional e Automação com Python
 
 - Enrico Marinho de Aquino — RM 569338
 - Gabriel Castilla Cavaloti — RM 571643
 
-## Público e problema
+## Proposta
 
-Quem usa o SUS pela primeira vez precisa saber onde buscar atendimento, quais documentos levar e onde conferir a informação. O assistente reúne orientações administrativas sobre Cartão SUS e cadastro, vacinação e atendimento na UBS e mostra a fonte de cada resposta.
+Orientar pessoas que usam o SUS pela primeira vez sobre Cartão SUS, vacinação e atendimento na UBS. A base reúne 12 orientações com documentos, local de atendimento, fonte oficial e data de conferência.
 
-- **ODS 3 — Saúde e Bem-Estar.** As orientações sobre o primeiro acesso ao SUS se relacionam com a meta 3.8, que trata do acesso a serviços essenciais de saúde. [Nações Unidas](https://brasil.un.org/pt-br/sdgs/03)
-- **ODS 10 — Redução das Desigualdades.** A linguagem simples ajuda a reduzir a barreira de informação para quem ainda precisa entender como usar o serviço, em linha com a meta 10.2 sobre inclusão. [Nações Unidas](https://brasil.un.org/pt-br/sdgs/10)
+O projeto se relaciona ao ODS 3, pelo acesso à informação sobre saúde, e ao ODS 10, pela linguagem acessível.
 
-## Soluções em Energias Renováveis e Sustentáveis
+## Como executar
 
-O módulo ajuda famílias a entender quanto gastam com iluminação e o que muda ao trocar as lâmpadas. O exemplo usa seis incandescentes de 60 W, acesas por cinco horas diárias. Comparamos esse uso com duas alternativas de brilho semelhante, LED ligado à rede e LED alimentado por painel solar e bateria.
+Com Python 3.10 ou superior, abra o terminal nesta pasta e rode:
 
-No simulador, é possível alterar a quantidade de lâmpadas, as horas de uso, o preço do kWh e o cenário de sol. As respostas sobre economia, consumo, bateria e impacto ambiental acompanham essas alterações. O mesmo cálculo atende o menu do terminal e a interface no navegador.
-
-| Opção para 30 dias | Energia da rede | Despesa variável com iluminação | Investimento estimado |
-| --- | ---: | ---: | ---: |
-| Incandescentes existentes | 54,00 kWh | R$ 54,00 | R$ 0 |
-| LED + rede | 8,10 kWh | R$ 8,10 | R$ 72 |
-| LED + solar com bateria, junho médio em São Paulo | 0 kWh | R$ 0,00 | R$ 2.072 |
-
-Os valores usam R$ 1,00/kWh e preços ilustrativos de equipamentos. A conta da residência também inclui outros consumos e cobranças. Com pouco sol, o modelo prevê complemento da rede para manter a iluminação. Os dados, as perdas consideradas e os limites estão no estudo abaixo.
-
-Para usar pelo terminal, execute `python main.py` e escolha **5. Energia e sustentabilidade**. Para abrir o simulador, execute `python energia_web.py` e acesse `http://127.0.0.1:8765` no navegador. É necessário ter Python 3.10 ou superior. O programa usa a biblioteca padrão e os dados já incluídos na pasta.
-
-- O [estudo de energia](docs/energia.md) reúne as contas, a comparação, as recomendações e as referências.
-- Os [dados do cenário](data/energia.json) guardam as premissas usadas no código. A [resposta original da NASA POWER](data/nasa-power-sao-paulo.json) contém a irradiação consultada para São Paulo.
-- Os [registros de verificação](docs/testes-energia.md) apresentam os testes técnicos, as evidências e o roteiro para avaliação com usuários.
-
-## Executar no Windows
-
-Abra o PowerShell na pasta do repositório. Com Python 3.10 ou superior disponível, rode:
-
-```powershell
+```
 python main.py
 ```
 
-O programa usa a biblioteca padrão, funciona localmente e usa regras de busca em Python. O módulo de energia descrito acima integra a contribuição de Soluções em Energias Renováveis e Sustentáveis.
+O menu permite perguntar, navegar pelas categorias, consultar indicadores e exportar o CSV. O zero volta à tela anterior. O projeto usa a biblioteca padrão do Python.
 
-## Busca das orientações sobre o SUS
+## Como funciona
 
-O menu inicia um `Assistente` que usa uma `BaseConhecimento` composta por objetos `Orientacao`. A busca compara a pergunta, as palavras-chave e o título em minúsculas, sem acentos ou pontuação. Cada palavra-chave ou expressão completa encontrada soma 3 pontos. Cada palavra distinta da pergunta com quatro letras ou mais que aparece no título soma 1 ponto. A busca devolve as tuplas `(pontos, orientação)` da maior para a menor pontuação.
+`Orientacao` guarda e exibe os dados. `BaseConhecimento` lê o JSON e busca as orientações. `Assistente` recebe as entradas e registra os atendimentos. O Assistente contém a base, que contém uma lista de orientações.
 
-A melhor pontuação determina a confiança. De 3 a 5 é média e a partir de 6 é alta. Abaixo de 3, o programa indica reformular ou navegar por categorias. A tela oferece até duas alternativas com pontuação de pelo menos 3.
+A busca compara os textos em minúsculas, sem acentos ou pontuação. Cada palavra-chave completa encontrada soma 3 pontos. Cada palavra distinta da pergunta com quatro letras ou mais que aparece no título soma 1 ponto. Os resultados são tuplas ordenadas por pontuação.
 
-## Histórico dos atendimentos sobre o SUS
+A partir de 6 pontos, a confiança é alta. De 3 a 5, é média. Abaixo de 3, o programa sugere reformular ou navegar. São exibidas até duas alternativas.
 
-- Faça uma pergunta sem dados pessoais ou navegue pelas categorias. Perguntas com `@` ou oito ou mais dígitos são recusadas antes da busca e do registro.
-- Edite `data/base_conhecimento.json` para atualizar respostas e palavras-chave. Ao atualizar uma orientação, confira a fonte oficial e atualize `verificado_em`.
-- O histórico guarda localmente a última pergunta válida de cada atendimento, a orientação exibida e o feedback. A navegação direta grava a pergunta em branco. Cada busca válida conta uma tentativa. Se uma busca sem resultado for resolvida pelas categorias, a escolha soma uma tentativa no mesmo atendimento.
-- O tempo mede da abertura da busca ou da navegação até a exibição da orientação avaliada. Em atendimentos sem orientação, mede até o retorno ao menu. O tempo de feedback fica fora da medição.
-- A taxa de respostas encontradas usa todos os atendimentos. A taxa de respostas que ajudaram usa as orientações com feedback `s` ou `n`. O tempo médio usa os atendimentos com orientação. Dúvidas sem solução incluem respostas ausentes e orientações avaliadas com `n`. A facilidade é a média das notas coletadas na saída.
-- `data/historico.json` persiste atendimentos e notas de facilidade por sessão. Se estiver corrompido, o programa preserva o arquivo e registra em memória durante a sessão. O programa foi projetado para uma sessão por vez.
-- A opção de exportação gera `data/atendimentos.csv` com as linhas dos atendimentos. Use dados fictícios nos testes técnicos e evite compartilhar o histórico de uso por conter texto livre.
+O histórico fica em `data/historico.json`. O CSV é gerado pelo menu. A taxa de ajuda considera as respostas avaliadas, e o tempo médio considera os atendimentos com orientação. A facilidade é a média das notas dadas na saída.
 
-## Fontes do SUS
+## Verificação
 
-As fontes abaixo foram conferidas em 16/11/2026. Cada registro da base aponta para a página que sustenta a orientação.
+Os 12 testes técnicos passaram, cobrindo busca, navegação, entradas inválidas, bloqueio de dados pessoais, histórico e CSV.
 
-- [Ministério da Saúde · Perguntas frequentes do Meu SUS Digital](https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao)
-- [Ministério da Saúde · Atendimento CadSUS](https://webatendimento.saude.gov.br/faq/cadsus)
-- [Ministério da Saúde · Vacinação](https://www.gov.br/saude/pt-br/vacinacao)
-- [Ministério da Saúde · Carteira de vacinação digital e correção de registros](https://www.gov.br/saude/pt-br/assuntos/noticias/2026/outubro/quer-consultar-suas-vacinas-saiba-como-acessar-a-carteira-de-vacinacao-pelo-meu-sus-digital)
-- [Ministério da Saúde · Calendário Nacional de Vacinação](https://www.gov.br/saude/pt-br/vacinacao/calendario)
-- [Ministério da Saúde · Serviços na UBS](https://www.gov.br/saude/pt-br/assuntos/noticias/2025/outubro/ubs-ou-upa-saiba-quando-procurar-a-unidade-mais-proxima-de-voce)
-- [Ministério da Saúde · Portaria GM/MS nº 12.263 sobre o CadSUS](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt12263_05_10_2026.html)
+A expressão “faço o cartão do SUS” foi acrescentada após uma falha na busca. A pergunta passou a receber 4 pontos e a exibir a orientação correta.
 
-## Testes técnicos
+## Teste com usuários
 
-```powershell
-python -m unittest discover -s tests -v
-python tests/simular_atendimentos.py evidencias/simulacao
-```
+A dupla informou ter realizado dez atendimentos com três participantes e forneceu os resultados agregados abaixo.
 
-Em 18/11/2026, os 18 testes automatizados passaram, sendo 12 do assistente SUS e 6 do módulo de energia. A simulação executou 10 atendimentos no terminal em três sessões roteirizadas com 4, 3 e 3 atendimentos.
+| Participante | Atendimentos | Orientações encontradas | Facilidade de uso |
+| --- | ---: | ---: | ---: |
+| Pessoa 1 | 4 | 4 | 4/5 |
+| Pessoa 2 | 3 | 3 | 5/5 |
+| Pessoa 3 | 3 | 2 | 4/5 |
+| Total / média | 10 | 9 | 4,3/5 |
 
-| Indicador exibido | Resultado da simulação |
+| Indicador | Resultado informado |
 | --- | --- |
-| Respostas encontradas | 90% (9 de 10) |
-| Respostas que ajudaram | 100% (9 de 9 avaliações programadas) |
-| Tempo médio para encontrar | 0,0 s na precisão de uma casa decimal, com entradas enviadas por script |
-| Tentativas por atendimento | 1,1 |
-| Facilidade média | 4,3/5, a partir das entradas programadas 4, 5 e 4 |
-| Dúvidas sem solução | 1. Transferência de título de eleitor, assunto fora da base SUS |
+| Orientações encontradas | 90% (9 de 10) |
+| Orientação considerada útil | 100% |
+| Tempo médio por atendimento | Aproximadamente 4 minutos e 30 segundos |
+| Tentativas por atendimento | Aproximadamente 1,2 |
+| Facilidade média | 4,3/5 |
+| Dúvidas sem solução | 1 atendimento (10%) |
 
-Na verificação técnica inicial, “Como faço o cartão do SUS?” ficava abaixo da pontuação mínima. Acrescentamos a expressão na orientação sobre o primeiro cartão. A pergunta passou a obter 4 pontos e a apresentar a orientação correta. O caso faz parte dos testes automatizados.
+Os valores de utilidade, tempo e tentativas foram informados pela dupla de forma agregada. O tempo corresponde à duração média do atendimento.
 
-Evidências da simulação. [Histórico JSON](evidencias/simulacao/historico.json) · [CSV exportado](evidencias/simulacao/atendimentos.csv)
+A descrição da dúvida sem solução e uma melhoria decorrente dessa avaliação ainda precisam ser informadas. A melhoria técnica descrita acima foi feita durante a verificação do sistema.
 
-## Teste com usuários do módulo SUS
+## Fontes e limites
 
-A coleta com usuários ainda está pendente. Para a contribuição de Pensamento Computacional e Automação com Python, a avaliação prevê pelo menos três pessoas de fora da dupla, dez atendimentos no total e uma melhoria baseada nos resultados. Os indicadores da tabela acima vêm da simulação técnica.
+As informações foram conferidas em 16/11/2026. Cada registro do JSON informa seu link oficial.
 
-A verificação da compreensão das orientações de energia também está pendente. As tarefas e os campos para registrar comentários e ajustes estão em [testes de energia](docs/testes-energia.md).
+- [Meu SUS Digital](https://www.gov.br/saude/pt-br/composicao/seidigi/meususdigital/perguntas-e-respostas/cidadao)
+- [CadSUS](https://webatendimento.saude.gov.br/faq/cadsus)
+- [Vacinação](https://www.gov.br/saude/pt-br/vacinacao)
+- [Carteira digital de vacinação](https://www.gov.br/saude/pt-br/assuntos/noticias/2026/outubro/quer-consultar-suas-vacinas-saiba-como-acessar-a-carteira-de-vacinacao-pelo-meu-sus-digital)
+- [Calendário de vacinação](https://www.gov.br/saude/pt-br/vacinacao/calendario)
+- [Atendimento na UBS](https://www.gov.br/saude/pt-br/assuntos/noticias/2025/outubro/ubs-ou-upa-saiba-quando-procurar-a-unidade-mais-proxima-de-voce)
+- [Cadastro e documentação](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt12263_05_10_2026.html)
 
-## Limitações
+O assistente é acadêmico. Horários, agendamento e documentos devem ser confirmados no serviço oficial. A busca depende das expressões cadastradas. Evite digitar dados pessoais. Perguntas com arroba ou oito ou mais dígitos são bloqueadas.
 
-- A cobertura se limita aos temas incluídos no JSON. Expressões fora do vocabulário podem exigir reformulação ou navegação.
-- A orientação indica canais e procedimentos administrativos. Agenda, horários e disponibilidade de serviços precisam ser conferidos na unidade ou no canal oficial.
-- A regra de bloqueio identifica padrões de e-mail e números longos. Evite inserir qualquer dado pessoal em texto livre.
+## Vídeo
 
-## Vídeo da contribuição de energia
-
-A apresentação tem 1 min 52 s e mostra o cenário, a comparação das alternativas, as consultas ao assistente e o teste com pouco sol. A publicação como Não listado no YouTube está pendente.
+[Apresentação técnica no YouTube](https://youtu.be/8QYd1CMBlys)

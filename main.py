@@ -2,7 +2,6 @@ from pathlib import Path
 
 from assistente import Assistente, ler_opcao
 from base_conhecimento import BaseConhecimento
-from energia import menu_energia
 
 
 def main(diretorio_dados=None):
@@ -20,9 +19,8 @@ def main(diretorio_dados=None):
             print("2. Navegar por categorias")
             print("3. Ver indicadores")
             print("4. Exportar atendimentos para CSV")
-            print("5. Energia e sustentabilidade")
             print("0. Sair")
-            opcao = ler_opcao(5)
+            opcao = ler_opcao(4)
             if opcao == 0:
                 print("\nDe 1 (difícil) a 5 (fácil), como foi usar o assistente?")
                 print("0. Voltar ao menu")
@@ -37,8 +35,6 @@ def main(diretorio_dados=None):
                 assistente.navegar()
             elif opcao == 3:
                 assistente.exibir_indicadores()
-            elif opcao == 5:
-                menu_energia()
             else:
                 assistente.exportar_csv(diretorio_dados / "atendimentos.csv")
     except (EOFError, KeyboardInterrupt):
