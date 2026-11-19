@@ -2,7 +2,10 @@
 
 Projeto da FIAP GS2026.2 para a disciplina Pensamento Computacional e Automação com Python.
 
-**Integrantes:** Enrico Marinho de Aquino e Gabriel Castilla Cavaloti. Os RMs constam no arquivo de entrega da FIAP.
+**Integrantes**
+
+- Enrico Marinho de Aquino — RM 569338
+- Gabriel Castilla Cavaloti — RM 571643
 
 ## Público e problema
 
