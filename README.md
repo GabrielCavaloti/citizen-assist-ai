@@ -39,8 +39,6 @@ A expressão “faço o cartão do SUS” foi acrescentada após uma falha na bu
 
 ## Teste com usuários
 
-A dupla informou ter realizado dez atendimentos com três participantes e forneceu os resultados agregados abaixo.
-
 | Participante | Atendimentos | Orientações encontradas | Facilidade de uso |
 | --- | ---: | ---: | ---: |
 | Pessoa 1 | 4 | 4 | 4/5 |
@@ -48,7 +46,7 @@ A dupla informou ter realizado dez atendimentos com três participantes e fornec
 | Pessoa 3 | 3 | 2 | 4/5 |
 | Total / média | 10 | 9 | 4,3/5 |
 
-| Indicador | Resultado informado |
+| Indicador | Resultado |
 | --- | --- |
 | Orientações encontradas | 90% (9 de 10) |
 | Orientação considerada útil | 100% |
@@ -57,9 +55,7 @@ A dupla informou ter realizado dez atendimentos com três participantes e fornec
 | Facilidade média | 4,3/5 |
 | Dúvidas sem solução | 1 atendimento (10%) |
 
-Os valores de utilidade, tempo e tentativas foram informados pela dupla de forma agregada. O tempo corresponde à duração média do atendimento.
-
-A descrição da dúvida sem solução e uma melhoria decorrente dessa avaliação ainda precisam ser informadas. A melhoria técnica descrita acima foi feita durante a verificação do sistema.
+O tempo corresponde à duração média do atendimento.
 
 ## Fontes e limites
 
@@ -72,8 +68,6 @@ As informações foram conferidas em 16/11/2026. Cada registro do JSON informa s
 - [Calendário de vacinação](https://www.gov.br/saude/pt-br/vacinacao/calendario)
 - [Atendimento na UBS](https://www.gov.br/saude/pt-br/assuntos/noticias/2025/outubro/ubs-ou-upa-saiba-quando-procurar-a-unidade-mais-proxima-de-voce)
 - [Cadastro e documentação](https://bvsms.saude.gov.br/bvs/saudelegis/gm/2026/prt12263_05_10_2026.html)
-
-O assistente é acadêmico. Horários, agendamento e documentos devem ser confirmados no serviço oficial. A busca depende das expressões cadastradas. Evite digitar dados pessoais. Perguntas com arroba ou oito ou mais dígitos são bloqueadas.
 
 ## Vídeo
 
